@@ -1,230 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Srivarthini V | Aspiring Data Analyst</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-container">
-        <img src="profile.jpg" alt="Srivarthini V" class="profile-photo" onerror="this.src='https://picsum.photos/seed/srivarthini/200'">
-        <h2 class="profile-name">Srivarthini V</h2>
-      </div>
-      
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="home">
-            <i data-lucide="home"></i>
-            <span class="nav-text">Home</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="about">
-            <i data-lucide="user"></i>
-            <span class="nav-text">About</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="education">
-            <i data-lucide="graduation-cap"></i>
-            <span class="nav-text">Education</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="skills">
-            <i data-lucide="code"></i>
-            <span class="nav-text">Skills</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="tools">
-            <i data-lucide="wrench"></i>
-            <span class="nav-text">Tools</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="certificates">
-            <i data-lucide="award"></i>
-            <span class="nav-text">Certificates</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="resume">
-            <i data-lucide="file-text"></i>
-            <span class="nav-text">Resume</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" data-target="contact">
-            <i data-lucide="mail"></i>
-            <span class="nav-text">Contact</span>
-          </a>
-        </li>
-      </ul>
-    </aside>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V. Srivarthini - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables & Reset */
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            --card-hover: translateY(-5px);
+        }
 
-    <!-- Main Content -->
-    <main class="main-content">
-      
-      <!-- Home Section -->
-      <section id="home">
-        <img src="profile.jpg" alt="Srivarthini V" class="home-photo" onerror="this.src='https://picsum.photos/seed/srivarthini/400'">
-        <h1 class="home-name">Srivarthini V</h1>
-        <p class="home-title">Aspiring Data Analyst</p>
-        <div style="margin-top: 20px; display: flex; gap: 15px;">
-          <a href="https://www.linkedin.com/in/srivarthini-v-7b1b3b2b/" target="_blank" style="color: var(--primary-color); transition: var(--transition);">
-            <i data-lucide="linkedin" style="width: 30px; height: 30px;"></i>
-          </a>
-          <a href="mailto:srivarthini@example.com" style="color: var(--primary-color); transition: var(--transition);">
-            <i data-lucide="mail" style="width: 30px; height: 30px;"></i>
-          </a>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #f0f9ff, #e0e7ff, #fae8ff);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* For scroll animation */
+            transform: translateY(20px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            font-weight: 500;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Contact */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .icon-btn {
+            font-size: 3rem;
+            color: var(--text-dark);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .icon-btn:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            section { padding: 3rem 5%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">V.S</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="profile-container">
+            <img src="https://picsum.photos/seed/srivarthini/400/400" alt="Profile" class="profile-img">
         </div>
-      </section>
+        <h1>V. SRIVARTHINI</h1>
+        <h2>Web Developer | Data Analyst</h2>
+        <p class="tagline">"Passionate about building modern websites and exploring data to find meaningful insights."</p>
+    </section>
 
-      <!-- About Section -->
-      <section id="about">
+    <!-- About -->
+    <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="card">
-          <p>I am a passionate student currently pursuing my degree at <strong>Sankara College of Science and Commerce</strong>. My primary interest lies in the field of <strong>Data Analysis</strong> and I am dedicated to learning the latest technologies that drive data-informed decision making.</p>
-          <p style="margin-top: 15px;">I enjoy uncovering insights from raw data and translating them into meaningful stories. I am constantly exploring new tools and methodologies to enhance my analytical skills and contribute effectively to the tech industry.</p>
+        <div class="card visible">
+            <p>I am an enthusiastic beginner in the world of technology, with a strong interest in Web Development, AI tools, and Data Analysis. I am eager to learn new technologies and apply my skills to solve real-world problems. My journey is driven by curiosity and a commitment to continuous growth in the ever-evolving tech landscape.</p>
         </div>
-      </section>
+    </section>
 
-      <!-- Education Section -->
-      <section id="education">
+    <!-- Education -->
+    <section id="education">
         <h2 class="section-title">Education</h2>
-        <div class="grid-container">
-          <div class="card">
-            <h3 class="card-title">B.Sc Computer Science / Data Analytics</h3>
-            <p class="card-subtitle">Sankara College of Science and Commerce</p>
-            <p>Currently pursuing undergraduate studies with a focus on data-driven computing and statistical analysis.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Higher Secondary Certificate (HSC)</h3>
-            <p class="card-subtitle">Percentage: 70%</p>
-            <p>Completed higher secondary education with a strong foundation in core subjects.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Secondary School Leaving Certificate (SSLC)</h3>
-            <p class="card-subtitle">Percentage: 70%</p>
-            <p>Foundational schooling completed with consistent academic performance.</p>
-          </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>12th Standard</h3>
+                <h1 style="color: var(--primary); margin: 1rem 0;">78%</h1>
+                <p>Percentage</p>
+            </div>
+            <div class="card">
+                <h3>10th Standard</h3>
+                <h1 style="color: var(--secondary); margin: 1rem 0;">68%</h1>
+                <p>Percentage</p>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Skills Section -->
-      <section id="skills">
-        <h2 class="section-title">Skills</h2>
+    <!-- Internship -->
+    <section id="experience">
+        <h2 class="section-title">Internship</h2>
         <div class="card">
-          <div class="tags-container">
-            <span class="tag">Excel</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Basic Statistics</span>
-          </div>
+            <h3>Web Development Intern</h3>
+            <p style="color: var(--text-light); margin-bottom: 1rem;">Company Name • Duration</p>
+            <p>Gained hands-on experience in building responsive web pages using HTML, CSS, and JavaScript. Collaborated with the team to implement design changes and improve user experience.</p>
         </div>
-      </section>
+    </section>
 
-      <!-- Tools Section -->
-      <section id="tools">
-        <h2 class="section-title">Tools</h2>
-        <div class="grid-container">
-          <div class="card">
-            <i data-lucide="table" style="color: #217346; margin-bottom: 15px;"></i>
-            <h3 class="card-title">Microsoft Excel</h3>
-            <p>Advanced data manipulation, pivot tables, and complex formulas for data cleaning and analysis.</p>
-          </div>
-          <div class="card">
-            <i data-lucide="database" style="color: #00758f; margin-bottom: 15px;"></i>
-            <h3 class="card-title">MySQL</h3>
-            <p>Relational database management, writing efficient queries, and database design.</p>
-          </div>
-          <div class="card">
-            <i data-lucide="bar-chart-3" style="color: #f2c811; margin-bottom: 15px;"></i>
-            <h3 class="card-title">Power BI</h3>
-            <p>Creating interactive dashboards and reports to visualize complex datasets.</p>
-          </div>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Hard Skills</h3>
+        <div class="skills-container" style="margin-bottom: 2rem;">
+            <div class="skill-tag"><i class="fab fa-html5"></i> HTML</div>
+            <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-tag"><i class="fas fa-database"></i> SQL</div>
+            <div class="skill-tag"><i class="fas fa-chart-bar"></i> Data Analysis</div>
         </div>
-      </section>
 
-      <!-- Certificates Section -->
-      <section id="certificates">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Soft Skills</h3>
+        <div class="skills-container" style="margin-bottom: 2rem;">
+            <div class="skill-tag">Communication</div>
+            <div class="skill-tag">Teamwork</div>
+            <div class="skill-tag">Problem Solving</div>
+            <div class="skill-tag">Time Management</div>
+            <div class="skill-tag">Creativity</div>
+        </div>
+
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Tools</h3>
+        <div class="skills-container" style="margin-bottom: 2rem;">
+            <div class="skill-tag">Google AI Studio</div>
+            <div class="skill-tag">Stitch</div>
+        </div>
+
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Languages</h3>
+        <div class="skills-container">
+            <div class="skill-tag">Tamil</div>
+            <div class="skill-tag">English</div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates">
         <h2 class="section-title">Certificates</h2>
-        <div class="grid-container">
-          <a href="ibm.jpg" target="_blank" class="card cert-card">
-  <h3 class="card-title">IBM certificate</h3>
-  <p>Issued by Coursera / Google</p>
-  <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 10px;">
-    Click to view certificate
-  </p>
-</a>
-          <div class="card cert-card" data-img="certificate2.jpg" style="cursor: pointer;">
-            <h3 class="card-title">SQL for Data Science</h3>
-            <p>Issued by Udemy</p>
-            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 10px;">Click to view certificate</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Resume Section -->
-      <section id="resume">
-        <h2 class="section-title">Resume</h2>
-        <div class="card" style="text-align: center; padding: 50px;">
-          <i data-lucide="file-text" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-          <h3>My Professional Resume</h3>
-          <p>Download or view my detailed resume to learn more about my background and experience.</p>
-          <a href="resume.pdf" class="btn" target="_blank">
-            <i data-lucide="download" style="display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
-            View / Download Resume
-          </a>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <a href="mailto:srivarthini@example.com" class="contact-card">
-            <div class="contact-icon"><i data-lucide="mail"></i></div>
-            <div>
-              <h4 style="font-weight: 600;">Email</h4>
-              <p style="color: var(--text-light);">srivarthini@example.com</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Certificate Name 1</h3>
+                <p>Issuing Organization</p>
             </div>
-          </a>
-          <a href="https://www.linkedin.com/in/srivarthini-v-7b1b3b2b/" target="_blank" class="contact-card">
-            <div class="contact-icon"><i data-lucide="linkedin"></i></div>
-            <div>
-              <h4 style="font-weight: 600;">LinkedIn</h4>
-              <p style="color: var(--text-light);">linkedin.com/in/srivarthini</p>
+            <div class="card">
+                <h3>Certificate Name 2</h3>
+                <p>Issuing Organization</p>
             </div>
-          </a>
-          <div class="contact-card">
-            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
-            <div>
-              <h4 style="font-weight: 600;">Location</h4>
-              <p style="color: var(--text-light);">Coimbatore, Tamil Nadu</p>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-    </main>
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-icons">
+            <a href="https://linkedin.com" target="_blank" class="icon-btn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:srivarthini808@gmail.com" class="icon-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--text-light);">
+        <p>&copy; 2026 V. Srivarthini. All rights reserved.</p>
+    </footer>
 
     <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
-    </script>
-    <script src="script.js"></script>
-  </body>
-</html>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
 
